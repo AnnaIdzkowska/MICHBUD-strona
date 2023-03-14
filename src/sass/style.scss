@@ -1,0 +1,395 @@
+@use "./colors" as colors;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.6rem;
+	background: #333;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.underline {
+	margin: 0 auto 40px;
+	width: 60px;
+	height: 4px;
+	background-color: colors.$main;
+}
+
+.hero-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 0, 0, 0.6);
+}
+
+.hero-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: colors.$main;
+}
+
+.section-title {
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+}
+
+section {
+	scroll-margin-top: 120px;
+}
+
+.nav-desktop {
+	position: sticky;
+	top: 0;
+	height: 100px;
+	line-height: 100px;
+	background-color: white;
+	text-align: end;
+	z-index: 10;
+}
+
+.burger-icon {
+	display: block;
+	margin-left: auto;
+	padding: 0 30px;
+	line-height: 100px;
+	font-size: 50px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.logo {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	height: 100px;
+	width: 100px;
+}
+
+.nav-items {
+	display: none;
+}
+
+.nav-mobile {
+	position: fixed;
+	top: 100px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #fff;
+	transform: translateX(100%);
+	transition: transform 0.3s;
+	z-index: 1000;
+
+	&--active {
+		transform: translateX(0);
+	}
+	.nav-item-mobile {
+		position: relative;
+		color: #333;
+		padding: 10px 0;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 20px;
+		font-weight: bold;
+		transition: color 0.3s;
+	}
+
+	.nav-item-mobile:hover {
+		color: colors.$main;
+	}
+}
+
+.header {
+	position: relative;
+	height: 450px;
+	background-image: url(/dist/img/domtło3.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+//main
+
+main {
+	margin: 60px 0;
+}
+
+
+.about-us {
+	position: relative;
+
+	.box {
+		padding: 0 20px;
+		width: 100%;
+		height: 100%;
+
+		&__text {
+			padding: 20px 0;
+			width: 100%;
+			height: 50%;
+			font-size: 15px;
+			color: #fff;
+		}
+		&__img {
+			position: relative;
+			width: 100%;
+			height: 400px;
+		}
+	}
+
+	.images__one {
+		position: absolute;
+		top: 0;
+		left: 10%;
+		width: 270px;
+		height: 330px;
+		box-shadow: -2px -2px 5px #787474;
+	}
+	.images__two {
+		position: absolute;
+		bottom: 0;
+		left: 23%;
+		width: 270px;
+		height: 330px;
+		box-shadow: 2px 2px 5px #787474;
+	}
+}
+.box__offer {
+	color: #fff;
+	padding: 20px 0;
+	transition: transform 0.3s;
+}
+.box__offer:hover {
+	transform: scale(1.1);
+}
+
+.items {
+	padding: 0 30px;
+}
+.picture {
+	max-height: 320px;
+}
+
+.slick-prev,
+.slick-next {
+	background: none;
+	border: none;
+	font-size: 0;
+}
+
+// Stylowanie przycisków nawigacyjnych w bibliotece Slick
+.slick-prev:before,
+.slick-next:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 25px;
+	height: 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+// Strzałka w lewo
+.slick-prev:before {
+	left: -10px;
+	background-image: url("/dist/img/ikony/chevrons-left1.png");
+}
+
+// Strzałka w prawo
+.slick-next:before {
+	right: -10px;
+	background-image: url("/dist/img/ikony/chevrons-right1.png");
+}
+
+// Hover dla strzałki w lewo
+.slick-prev:hover:before {
+	background-image: url("/dist/img/ikony/chevrons-left1.png");
+}
+
+// Hover dla strzałki w prawo
+.slick-next:hover:before {
+	background-image: url("/dist/img/ikony/chevrons-right1.png");
+}
+
+.accordion-item {
+	margin: 10px;
+	border-radius: 5px;
+}
+
+.accordion-btn {
+	position: relative;
+	background-color: #fff;
+	color: #333;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	font-weight: 550;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: background-color 0.5s ease;
+	color: #333;
+
+	.fa-arrow-down {
+		position: absolute;
+		top: 40%;
+		right: 2%;
+		transform: translateX(-50%, -50%);
+	}
+}
+
+.accordion-btn:hover {
+	background-color: #ccc;
+	outline: none;
+}
+
+.accordion-content {
+	display: none;
+	padding: 10px 20px;
+}
+
+.accordion-content-text {
+	color: black;
+}
+
+.active {
+	display: block;
+}
+
+.bounce {
+	animation: bounce 0.01s forwards;
+}
+
+.partners {
+	padding: 20px 0 0;
+}
+
+/* kontakt */
+.contact {
+	text-align: center;
+	color: #fff;
+}
+
+.contact h3 {
+	margin: 20px 0 5px;
+	text-transform: uppercase;
+}
+
+.footer {
+	color: #fff;
+	text-align: center;
+
+	.wrapper {
+		padding: 0 0;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+
+	100% {
+		transform: rotate(180deg);
+		opacity: 1;
+	}
+}
+
+@media (min-width: 768px) {
+	.nav-mobile {
+		display: none;
+	}
+	.burger-icon {
+		display: none;
+	}
+	.nav-items {
+		display: block;
+	}
+
+	.nav-items a {
+		padding: 0 7px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 20px;
+		font-weight: bold;
+		color: #333;
+		transition: color 0.3s;
+	}
+
+	.nav-items a:hover {
+		color: colors.$main;
+	}
+
+	
+
+	.slick-prev:before,
+	.slick-next:before {
+		width: 30px;
+		height: 30px;
+	}
+
+	// Strzałka w lewo
+	.slick-prev:before {
+		left: -30px;
+	}
+
+	// Strzałka w prawo
+	.slick-next:before {
+		right: -30px;
+		background-image: url("/dist/img/ikony/chevrons-right1.png");
+	}
+}
+
+@media (min-width: 992px) {
+	.nav-mobile {
+		display: none;
+	}
+	.nav-items a {
+		padding: 0 15px;
+		font-size: 25px;
+	}
+.about-us {
+	.box {
+		display: flex;
+
+		&__text {
+			padding-top: 50px;
+			padding-right: 50px;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			font-size: 20px;
+		}
+	}
+}
+}
