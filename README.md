@@ -1,6 +1,6 @@
 # strona-MICHBUD
 
-Strona firmy budowlanej MICHBUD. 
+MICHBUD construction company website.
 
 Technologies :
 - SASS
@@ -8,3 +8,8 @@ Technologies :
 - Flexbox
 - Java Script
 - RWD
+
+How to run project
+1. git clone https://github.com/AnnaIdzkowska/MICHBUD-strona.git
+2. npm install
+3. gulp
